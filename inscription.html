@@ -7,6 +7,7 @@
     <title>S'inscrire</title>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/style.css">
+    <script src="scripts/script.js"></script>
 </head>
 <body>
     <div class="container-fluid" id="layoutFirst">
@@ -31,21 +32,21 @@
                     <div class="mb-3 form-floating d-flex">
                         <input type="password" class="form-control" id="inputPassword" placeholder="Secret">
                         <label for="inputPassword">Mot de passe</label>
-                        <button class="btn password-toggle-btn" type="button" onclick="togglePassword()" style="background-color: #695cee;">
+                        <button class="btn password-toggle-btn" type="button" onclick="togglePassword('inputPassword')" style="background-color: #695cee;">
                             <img src="assets/oeil.png" alt="" srcset="" id="oeil">
                         </button>
                     </div>
                     <div class="mb-3 form-floating d-flex">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Secret">
-                        <label for="inputPassword">Confirmation du Mot de passe</label>
-                        <button class="btn password-toggle-btn" type="button" onclick="togglePassword()" style="background-color: #695cee;">
+                        <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="Secret">
+                        <label for="inputPasswordConfirm">Confirmation du Mot de passe</label>
+                        <button class="btn password-toggle-btn" type="button" onclick="togglePassword('inputPasswordConfirm')" style="background-color: #695cee;">
                             <img src="assets/oeil.png" alt="" srcset="" id="oeil">
                         </button>
                     </div>
                     
                 
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary" type="button" id="btnConnexion">Inscription !</button>
+                        <button class="btn btn-primary" type="button" id="btnInscription">Inscription !</button>
                         <p><a href="#">Déjà un compte ? Connectez-vous !</a></p>
                     </div>
                     
@@ -58,19 +59,5 @@
            </div>
         </div>
     </div>
-
-    <script>
-        function togglePassword() {
-            var passwordInput = document.getElementById("inputPassword");
-            var oeilImg = document.getElementById("oeil");
-            if (passwordInput.type === "password") {
-                passwordInput.type = "text";
-                oeilImg.src = "assets/cacher.png";
-            } else {
-                passwordInput.type = "password";
-                oeilImg.src = "assets/oeil.png";
-            }
-        }
-    </script>
 </body>
 </html>
