@@ -10,6 +10,11 @@ function togglePassword(id, idOeuil) {
     }
 }
 
+function isIdenticalPassword() {
+    var firstPassword = document.getElementById(id);
+    var secondPassword = document.getElementById(idOeuil);
+}
+
 function validerEmail(emailInput){
     var emailRegex = /^\S+@\S+\.\S+$/;
     if (!emailRegex.test(emailInput.value)) {
