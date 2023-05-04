@@ -1,5 +1,6 @@
 /* Polices d'écriture */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 /* Modifier la taille de l'image */
 #oeil, #oeilConfirm {
@@ -9,11 +10,14 @@
 }
 
 body{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    
     /*background-color: #c7c2ff;*/
-    background-color: #fff;
+    background-color: #FBF9F6;
 }
-
+h2{
+  font-family: 'Montserrat', sans-serif;
+}
 /* Couleur bouton connexion*/
 #btnConnexion, #btnInscription{
     background-color: #695cee;
