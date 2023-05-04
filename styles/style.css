@@ -11,11 +11,11 @@
 
 body{
     font-family: 'Josefin Sans', sans-serif;
-    
+    background-color: #695cee;
     /*background-color: #c7c2ff;*/
-    background-color: #FBF9F6;
+    
 }
-h2{
+h2,h4{
   font-family: 'Montserrat', sans-serif;
 }
 /* Couleur bouton connexion*/
@@ -29,6 +29,7 @@ h2{
 
 #layoutFirst {
     flex-direction: row;
+    background-color: #FBF9F6;
   }
   
   #colImage {
@@ -47,3 +48,39 @@ h2{
   #btnInscription:hover {
     transform: translateX(-10px);
   }
+
+  #layoutDashboardEtudiant {
+    background-color: #695cee;
+    padding: 20px; /* Ajout d'un espacement interne de 20 pixels */
+  }
+  
+  #menu {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #887cf4;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px -4px #000000;
+    padding: 20px;
+    border: 2px solid white;
+    }
+    
+    #menu img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    }
+    
+    #menu h4 {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 50px;
+    text-align: center;
+    }
+  
