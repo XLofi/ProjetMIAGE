@@ -6,23 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
     <div class="container text-center" id="layoutFirst">
         <div class="row">
            <div class="col-md-5">
             <h2>Se Connecter</h2>
-            <div id="form" class="d-flex justify-content-center shadow p-3 mb-5 bg-body rounded">
+            <div id="form" class="d-flex justify-content-center shadow p-3 mb-5 bg-body rounded  border border-primary">
                 <div class="col-md-10">
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                         <label for="floatingInput">Email</label>
                     </div>
-                    <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                        <label for="floatingPassword">Mot de passe</label>
+                    <div class="mb-3 form-floating d-flex">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Secret">
+                        <label for="inputPassword">Mot de passe</label>
+                        <button class="btn password-toggle-btn" type="button" onclick="togglePassword()" style="background-color: #695cee;">
+                            <img src="assets/oeil.png" alt="" srcset="" id="oeil">
+                        </button>
                     </div>
+                    
+                
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" type="button">Button</button>
+                        <p><a href="#">Pas de compte ? Inscrivez-vous !</a></p>
+                    </div>
+                    
                 </div>
+                
             </div>
            </div>
            <div class="col-md-7">
@@ -31,5 +43,18 @@
         </div>
     </div>
 
+    <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById("inputPassword");
+            var oeilImg = document.getElementById("oeil");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                oeilImg.src = "assets/cacher.png";
+            } else {
+                passwordInput.type = "password";
+                oeilImg.src = "assets/oeil.png";
+            }
+        }
+    </script>
 </body>
 </html>

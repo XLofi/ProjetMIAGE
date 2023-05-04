@@ -1,0 +1,6 @@
+/* Modifier la taille de l'image */
+#oeil {
+    width: auto;
+    height: 18px;
+    cursor: pointer;
+}
