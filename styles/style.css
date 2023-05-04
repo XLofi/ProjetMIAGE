@@ -1,6 +1,28 @@
+/* Polices d'écriture */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 /* Modifier la taille de l'image */
 #oeil {
     width: auto;
     height: 18px;
     cursor: pointer;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #c7c2ff;
+}
+
+/* Couleur bouton connexion*/
+#btnConnexion{
+    background-color: #695cee;
+}
+
+#colImage{
+    background-color: #695cee;
+}
+
+#imgMiage{
+    border-radius: 12px;
+    box-shadow: 12px 12px #edebff;
 }
