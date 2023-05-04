@@ -27,7 +27,7 @@ function validerMotDePasse(passwordInput){
     return true;
 }
 
-function validerFormulaire() {
+function validerFormulaireConnexion() {
     var emailInput = document.getElementById("floatingInput");
     var passwordInput = document.getElementById("inputPassword");
     var btnConnexion = document.getElementById("btnConnexion");
