@@ -17,11 +17,11 @@
                 <div class="col-md-10">
                     <h2 style="text-align: center;">Se Connecter</h2>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" oninput="validerFormulaire()">
                         <label for="floatingInput">Email</label>
                     </div>
                     <div class="mb-3 form-floating d-flex">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Secret">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Secret" oninput="validerFormulaire()">
                         <label for="inputPassword">Mot de passe</label>
                         <button class="btn password-toggle-btn" type="button" onclick="togglePassword()" style="background-color: #695cee;">
                             <img src="assets/oeil.png" alt="" srcset="" id="oeil">
@@ -30,7 +30,7 @@
                     
                 
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary" type="button" id="btnConnexion">Connexion !</button>
+                        <button class="btn btn-primary" type="button" id="btnConnexion" disabled >Connexion !</button>
                         <p><a href="#">Pas de compte ? Inscrivez-vous !</a></p>
                     </div>
                     
@@ -45,7 +45,7 @@
     </div>
 
     <script>
-        function togglePassword() {
+       function togglePassword() {
             var passwordInput = document.getElementById("inputPassword");
             var oeilImg = document.getElementById("oeil");
             if (passwordInput.type === "password") {
@@ -56,6 +56,54 @@
                 oeilImg.src = "assets/oeil.png";
             }
         }
+
+        function validerEmail(emailInput){
+            var emailRegex = /^\S+@\S+\.\S+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                //alert("Veuillez saisir une adresse mail valide !");
+                return false;
+            }
+            return true;
+        }
+
+        function validerMotDePasse(passwordInput){
+            if (passwordInput.value.length < 8) {
+                //alert("Le mot de passe doit contenir au moins 8 caractères !");
+                return false;
+            }
+            return true;
+        }
+
+        function validerFormulaire() {
+            var emailInput = document.getElementById("floatingInput");
+            var passwordInput = document.getElementById("inputPassword");
+            var btnConnexion = document.getElementById("btnConnexion");
+
+            // Vérifier l'email
+            if (!validerEmail(emailInput)) {
+                emailInput.classList.add("is-invalid");
+                btnConnexion.setAttribute("disabled", true);
+                btnConnexion.style.backgroundColor = "lightgrey";
+                return;
+            } else {
+                emailInput.classList.remove("is-invalid");
+            }
+
+            // Vérifier le mot de passe
+            if (!validerMotDePasse(passwordInput)) {
+                passwordInput.classList.add("is-invalid");
+                btnConnexion.setAttribute("disabled", true);
+                btnConnexion.style.backgroundColor = "lightgrey";
+                return;
+            } else {
+                passwordInput.classList.remove("is-invalid");
+            }
+
+            // Activer le bouton si tous les champs sont valides
+            btnConnexion.removeAttribute("disabled");
+            btnConnexion.style.backgroundColor = "#695cee";
+        }
+
     </script>
 </body>
 </html>
