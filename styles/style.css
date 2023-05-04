@@ -10,7 +10,8 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
-    background-color: #c7c2ff;
+    /*background-color: #c7c2ff;*/
+    background-color: #fff;
 }
 
 /* Couleur bouton connexion*/
@@ -18,11 +19,21 @@ body{
     background-color: #695cee;
 }
 
-#colImage{
+.colImage{
     background-color: #695cee;
 }
 
-#imgMiage{
-    border-radius: 12px;
-    box-shadow: 12px 12px #edebff;
-}
+#layoutFirst {
+    
+    flex-direction: row;
+  }
+  
+  #colImage {
+    background-color: #695cee;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px -4px #000000;
+  }
+  

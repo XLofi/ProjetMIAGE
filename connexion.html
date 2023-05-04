@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-    <div class="container text-center" id="layoutFirst">
-        <div class="row">
+    <div class="container-fluid" id="layoutFirst">
+        <div class="row justify-content-center align-items-center" style="height: 100vh;">
            <div class="col-md-5">
-            <h2>Se Connecter</h2>
+            
             <div id="form" class="d-flex justify-content-center shadow p-3 mb-5 bg-body rounded  border border-primary">
                 <div class="col-md-10">
+                    <h2 style="text-align: center;">Se Connecter</h2>
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                         <label for="floatingInput">Email</label>
@@ -29,7 +30,7 @@
                     
                 
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary" type="button" id="btnConnexion">Button</button>
+                        <button class="btn btn-primary" type="button" id="btnConnexion">Connexion !</button>
                         <p><a href="#">Pas de compte ? Inscrivez-vous !</a></p>
                     </div>
                     
@@ -37,8 +38,8 @@
                 
             </div>
            </div>
-           <div class="col-md-7" id="colImage">
-            <img src="assets/MiageLogo.png" alt="" id="imgMiage">
+           <div class="col-md-7 colImage" id="colImage">
+            <img src="assets/MiageLogo.png" alt="" class="img-fluid w-200" id="imgMiage" >
            </div>
         </div>
     </div>
