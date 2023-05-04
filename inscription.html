@@ -17,13 +17,19 @@
             <div id="form" class="d-flex justify-content-center shadow p-3 mb-5 bg-body rounded  border border-primary">
                 <div class="col-md-10">
                     <h2 style="text-align: center;">S'inscrire</h2>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Prénom">
-                        <label for="floatingInput">Prénom</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Nom">
-                        <label for="floatingInput">Nom</label>
+                    <div class="row g-2 mb-3">
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingInputGrid"     placeholder="name@example.com" value="">
+                                <label for="floatingInputGrid">Nom</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="">
+                                <label for="floatingInputGrid">Prénom</label>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">

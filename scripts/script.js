@@ -1,6 +1,6 @@
-function togglePassword(id) {
+function togglePassword(id, idOeuil) {
     var passwordInput = document.getElementById(id);
-    var oeilImg = document.getElementById("oeil");
+    var oeilImg = document.getElementById(idOeuil);
     if (passwordInput.type === "password") {
         passwordInput.type = "text";
         oeilImg.src = "assets/cacher.png";
