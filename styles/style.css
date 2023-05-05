@@ -100,9 +100,37 @@ h2,h4{
     }
 
     #etapesInscription{
-      padding-top: 15vh;
+      padding-top: 5vh;
     }
 
     #divFormCandidat{
-      padding-top: 15vh;
+      padding-top: 5vh;
+    }
+
+    .formH4{
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    #nomFormation{
+      padding-top: 5vh;
+      font-weight: bold;
+    }
+    
+    #topRightImage {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      height: 25vh;
+      width: auto;
+      border-bottom-left-radius: 50px;
+    }
+    
+    #itemListeInfosPZ{
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    #itemListePostuler{
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
     }

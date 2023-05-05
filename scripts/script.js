@@ -125,3 +125,38 @@ function validerFormulaireConnexion() {
     btnConnexion.removeAttribute("disabled");
     btnConnexion.style.backgroundColor = "#695cee";
 }
+
+function addStages() {
+    const stageDiv = document.createElement("div");
+    stageDiv.classList.add("row", "mt-3");
+    stageDiv.innerHTML = `
+      <h3 id="stagesZone">Stages</h3>
+      <div class="col-md-12">
+        <label for="inputIntituleStage" class="form-label">Intitulé  du stage</label>
+        <input type="text" class="form-control" id="inputIntituleStage">
+      </div>
+      <div class="col-md-6">
+        <label for="inputAnneeRealisation" class="form-label">Année de réalisation</label>
+        <input type="number" class="form-control" id="inputAnneeRealisation" min="1990" max="2023" step="1">
+      </div>
+      <div class="col-md-6">
+        <label for="inputNomEntreprise" class="form-label">Entreprise du stage</label>
+        <input type="text" class="form-control" id="inputNomEntreprise">
+      </div>
+      <div class="col-md-12">
+        <label for="inputMissions" class="form-label">Missions réalisées</label>
+        <input type="text" class="form-control" id="inputMissions" placeholder="Décrivez les missions réalisées...">
+      </div>
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" id="inputGroupFileCursus4">
+        <label class="input-group-text" for="inputGroupFileCursus4">Attestation de stage</label>
+      </div>
+      <div class="col-md-12">
+      `;
+    const autreStages = document.getElementById("autreStages");
+    autreStages.insertAdjacentElement("beforebegin", stageDiv);
+  }
+  
+  const ouiBtn = document.getElementById("ouiBtn");
+  ouiBtn.addEventListener("click", addStages);
+  
