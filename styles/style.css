@@ -57,10 +57,10 @@ h2,h4{
   #menu {
     margin-top: 20px;
     margin-bottom: 20px;
-    height: 70vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     background-color: #887cf4;
     border-radius: 10px;
     box-shadow: 5px 5px 15px -4px #000000;
@@ -68,19 +68,33 @@ h2,h4{
     border: 2px solid white;
     }
     
-    #menu img {
-    width: 50px;
-    height: auto;
-    margin-bottom: 80px;
-    display: flex;
-    justify-content: center;
-    }
-    
-    #menu h4 {
-    font-size: 18px;
-    color: #fff;
-    margin-top: 0;
-    margin-bottom: 50px;
-    text-align: center;
+    #menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  
+  #menu li {
+      margin-bottom: 20px;
+  }
+  
+  #menu img {
+      width: 20vh;
+      height: auto;
+      margin-bottom: 20px;
+  }
+
+    #dashboardTitle{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      color: #fff;
     }
   
+    #formCandidat{
+      background-color: #f0ecf7;
+      border-radius: 15px;
+      border: 2px solid white;
+      height: 90vh;
+      margin-top: 20px;
+
+    }
