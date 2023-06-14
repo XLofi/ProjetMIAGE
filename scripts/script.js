@@ -17,19 +17,24 @@ function isIdenticalPassword(firstPassword, secondPassword) {
 
 function validerEmail(emailInput){
     var emailRegex = /^\S+@\S+\.\S+$/;
-    if (!emailRegex.test(emailInput.value)) {
+    if (emailRegex.test(emailInput.value)) {
         //alert("Veuillez saisir une adresse mail valide !");
-        return false;
+        return true;
     }
-    return true;
+    return false;
 }
 
 function validerMotDePasse(passwordInput){
-    if (passwordInput.value.length < 8) {
-        //alert("Le mot de passe doit contenir au moins 8 caractères !");
-        return false;
+    var mdpRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()]).{8,}$/;
+    // if (passwordInput.value.length < 8) {
+    //     //alert("Le mot de passe doit contenir au moins 8 caractères !");
+    //     return false;
+    // }
+    if (mdpRegex.test(passwordInput.value)) {
+        return true;
     }
-    return true;
+
+    return false;
 }
 
 function validerFormulaireInscription() {
@@ -40,73 +45,28 @@ function validerFormulaireInscription() {
     var passwordConfirmInput = document.getElementById("inputPasswordConfirm");
     var btnInscription = document.getElementById("btnInscription");
 
+    var valid = true;
+
     // Vérifier le nom
-    if (nomInput.value.trim() == "") {
-        //nomInput.classList.add("is-invalid");
-        btnInscription.setAttribute("disabled", true);
-        btnInscription.style.backgroundColor = "lightgrey";
-        return;
+    if (nomInput.value.trim().length < 1) {
+        nomInput.classList.add("is-invalid");
+        valid = false;
     } else {
-        //nomInput.remove("is-invalid");
+        nomInput.classList.remove("is-invalid");
     }
 
-    // Verifier le prénom
-    if (prenomInput.value.trim() == "") {
-        //prenomInput.classList.add("is-invalid");
-        btnInscription.setAttribute("disabled", true);
-        btnInscription.style.backgroundColor = "lightgrey";
-        return;
+    // Vérifier le prénom
+    if (prenomInput.value.trim().length < 1) {
+        prenomInput.classList.add("is-invalid");
+        valid = false;
     } else {
-        //prenomInput.remove("is-invalid");
+        prenomInput.classList.remove("is-invalid");
     }
 
     // Vérifier l'email
     if (!validerEmail(emailInput)) {
         emailInput.classList.add("is-invalid");
-        btnInscription.setAttribute("disabled", true);
-        btnInscription.style.backgroundColor = "lightgrey";
-        return;
-    } else {
-        emailInput.classList.remove("is-invalid");
-    }
-
-    // Vérifier le mot de passe
-    if (validerMotDePasse(passwordInput)) {
-        passwordInput.classList.add("is-invalid");
-        btnInscription.setAttribute("disabled", true);
-        btnInscription.style.backgroundColor = "lightgrey";
-        return;
-    } else {
-        passwordInput.classList.remove("is-invalid");
-    }
-
-    // Confirmer le mot de passe
-    if (passwordInput != passwordConfirmInput) {
-        passwordConfirmInput.classList.add("is-invalid");
-        btnInscription.setAttribute("disabled", true);
-        btnInscription.style.backgroundColor = "lightgrey";
-        return;
-    } else {
-        passwordConfirmInput.classList.remove("is-invalid");
-    }
-
-
-    // Activer/Désactiver le bouton si tous les champs sont valides
-    btnInscription.removeAttribute("disabled");
-    btnInscription.style.backgroundColor = "#695cee";
-}
-
-function validerFormulaireConnexion() {
-    var emailInput = document.getElementById("floatingInput");
-    var passwordInput = document.getElementById("inputPassword");
-    var btnConnexion = document.getElementById("btnConnexion");
-
-    // Vérifier l'email
-    if (!validerEmail(emailInput)) {
-        emailInput.classList.add("is-invalid");
-        btnConnexion.setAttribute("disabled", true);
-        btnConnexion.style.backgroundColor = "lightgrey";
-        return;
+        valid = false;
     } else {
         emailInput.classList.remove("is-invalid");
     }
@@ -114,16 +74,61 @@ function validerFormulaireConnexion() {
     // Vérifier le mot de passe
     if (!validerMotDePasse(passwordInput)) {
         passwordInput.classList.add("is-invalid");
-        btnConnexion.setAttribute("disabled", true);
-        btnConnexion.style.backgroundColor = "lightgrey";
-        return;
+        valid = false;
     } else {
         passwordInput.classList.remove("is-invalid");
     }
 
-    // Activer le bouton si tous les champs sont valides
-    btnConnexion.removeAttribute("disabled");
-    btnConnexion.style.backgroundColor = "#695cee";
+    // Confirmer le mot de passe
+    if (passwordInput.value != passwordConfirmInput.value) {
+        passwordConfirmInput.classList.add("is-invalid");
+        valid = false;
+    } else {
+        passwordConfirmInput.classList.remove("is-invalid");
+    }
+
+    if (valid) {
+        // Activer/Désactiver le bouton si tous les champs sont valides
+        btnInscription.removeAttribute("disabled");
+        btnInscription.style.backgroundColor = "#695cee"; 
+    } else {
+        btnInscription.setAttribute("disabled", true);
+        btnInscription.style.backgroundColor = "lightgrey";
+    }
+
+}
+
+function validerFormulaireConnexion() {
+    var emailInput = document.getElementById("floatingInput");
+    var passwordInput = document.getElementById("inputPassword");
+    var btnConnexion = document.getElementById("btnConnexion");
+
+    var valid = true;
+
+    // Vérifier l'email
+    if (!validerEmail(emailInput)) {
+        emailInput.classList.add("is-invalid");
+        valid = false;
+    } else {
+        emailInput.classList.remove("is-invalid");
+    }
+
+    // Vérifier le mot de passe
+    if (!validerMotDePasse(passwordInput)) {
+        passwordInput.classList.add("is-invalid");
+        valid = false;
+    } else {
+        passwordInput.classList.remove("is-invalid");
+    }
+
+    if (valid) {
+        // Activer le bouton si tous les champs sont valides
+        btnConnexion.removeAttribute("disabled");
+        btnConnexion.style.backgroundColor = "#695cee";
+    } else {
+        btnConnexion.setAttribute("disabled", true);
+        btnConnexion.style.backgroundColor = "lightgrey";
+    }
 }
 
 function addStages() {
