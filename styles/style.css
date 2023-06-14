@@ -90,7 +90,7 @@ h2,h4{
       color: #fff;
     }
   
-    #formCandidat{
+    #formCandidat, #homePage{
       background-color: #f0ecf7;
       border-radius: 15px;
       border: 2px solid white;
@@ -133,4 +133,33 @@ h2,h4{
     #itemListePostuler{
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
+    }
+
+    #infosZone{
+    }
+
+    .recommanded{
+      background-color: #c90054;
+      margin-top: 1vh;
+    }
+    .colBadge{
+      position: relative;
+    }
+    .learnMore{
+      border-radius: 20px;
+      border-color: white;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: 2vw;
+      margin-bottom: 1vh;
+      background-color: #794dfd;
+    }
+
+    .infosBanner{
+      margin-bottom: 4vh;
+      background-color: #887cf4;
+      border-radius: 10px;
+      margin-left: 1vw;
+      box-shadow: 17px 20px 15px -3px rgba(0,0,0,0.1);
     }

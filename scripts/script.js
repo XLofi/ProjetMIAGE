@@ -159,4 +159,27 @@ function addStages() {
   
   const ouiBtn = document.getElementById("ouiBtn");
   ouiBtn.addEventListener("click", addStages);
+
+  
+  $(document).ready(function() {
+    $('#calendar').fullCalendar({
+      // Options du calendrier
+      // Par exemple :
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      events: [
+        // Liste des événements à afficher dans le calendrier
+        // Par exemple :
+        {
+          title: 'Mon événement',
+          start: '2023-05-01',
+          end: '2023-05-02'
+        },
+        // Ajoutez d'autres événements ici...
+      ]
+    });
+  });
   
