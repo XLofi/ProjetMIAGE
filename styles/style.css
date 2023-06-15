@@ -53,6 +53,11 @@ h2,h4{
     background-color: #695cee;
     padding: 20px; /* Ajout d'un espacement interne de 20 pixels */
   }
+
+  #title {
+    padding: auto;
+    text-align: center;
+  }
   
   #menu {
     margin-top: 20px;
@@ -66,6 +71,10 @@ h2,h4{
     border-radius: 10px;
     box-shadow: 5px 5px 15px -4px #000000;
     border: 2px solid white;
+    }
+
+    #elements {
+      padding: 40px;
     }
     
     #menu ul {
