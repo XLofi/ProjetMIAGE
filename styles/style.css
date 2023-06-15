@@ -62,7 +62,7 @@ h2,h4{
   #menu {
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 50px;
+    margin-left: 3.25vw;
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -74,7 +74,7 @@ h2,h4{
     }
 
     #elements {
-      padding: 40px;
+      padding: 2vw;
     }
     
     #menu ul {
