@@ -1,2 +1,17 @@
 bonjour
 je m'appelle bastien et je suis vagintarien.
+
+    #test {
+      background-color: #695cee;
+      position: fixed;
+      right: 0;
+      top: 0;
+      padding-left: 50px;
+      padding-bottom: 50px;
+      border-radius: 40px;
+    }
+
+    #topRightImage {
+      height: 70%;
+      width: 70%;
+    }
