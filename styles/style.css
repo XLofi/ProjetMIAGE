@@ -57,6 +57,7 @@ h2,h4{
   #menu {
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 50px;
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -64,7 +65,6 @@ h2,h4{
     background-color: #887cf4;
     border-radius: 10px;
     box-shadow: 5px 5px 15px -4px #000000;
-    padding: 20px;
     border: 2px solid white;
     }
     
@@ -86,7 +86,7 @@ h2,h4{
 
     #dashboardTitle{
       font-family: 'Montserrat', sans-serif;
-      font-size: 18px;
+      font-size: 16px;
       color: #fff;
     }
   
@@ -96,7 +96,11 @@ h2,h4{
       border: 2px solid white;
       height: 90vh;
       margin-top: 20px;
+    }
 
+    #separation {
+      width: 5%;
+      flex: 0 0 auto;
     }
 
     #etapesInscription{
