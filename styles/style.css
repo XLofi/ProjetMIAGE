@@ -108,7 +108,7 @@ h2,h4{
     }
 
     #separation {
-      width: 5%;
+      width: 2%;
       flex: 0 0 auto;
     }
 
@@ -128,24 +128,24 @@ h2,h4{
       padding-top: 5vh;
       font-weight: bold;
     }
-
+    
+    
     #divImageLogo {
-      border: 2px solid #695cee;
-      padding: 10px;
-      display: inline-block;
-    }
-    
-    
-    #topRightImage {
       position: absolute;
       top: 0;
       right: 0;
       z-index: 1;
-      height: 15vh;
-      min-height: 10vh;
-      max-height: 20vh;
-      width: auto;
+      background-color: #695cee;
+      padding-left: 3vw;
+      padding-bottom: 3vh;
       border-bottom-left-radius: 50px;
+
+      img {
+        height: 15vh;
+        width: auto;
+        min-height: 10vh;
+        max-height: 20vh;
+      }
     }
     
     #itemListeInfosPZ{
