@@ -115,13 +115,22 @@ h2,h4{
       padding-top: 5vh;
       font-weight: bold;
     }
+
+    #divImageLogo {
+      border: 2px solid #695cee;
+      padding: 10px;
+      display: inline-block;
+    }
+    
     
     #topRightImage {
       position: absolute;
       top: 0;
       right: 0;
       z-index: 1;
-      height: 25vh;
+      height: 15vh;
+      min-height: 10vh;
+      max-height: 20vh;
       width: auto;
       border-bottom-left-radius: 50px;
     }

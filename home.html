@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Accueil</title>
     <link rel="stylesheet" href="/styles/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <script src="scripts/script.js"></script>
 </head>
 <body>
     <div class="container-fluid" id="layoutDashboardEtudiant">
-        <img src="assets/MiageLogo.png" id="topRightImage" alt="Your image description">
+        <div id="divImageLogo">
+            <img src="assets/MiageLogo.png" id="topRightImage" alt="Your image description">
+        </div>
           
         <div class="row">
             <div class="col-md-1" id="menu">
@@ -67,13 +69,37 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5" id="calendar"></div>
+                    <div class="col-md-5" id="calendar">
+                        <div id="calendarContainer"></div>
+                    </div>
+                      
                 </div>
                 
                
             </div>
         </div>
     </div>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendarContainer');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            // Options du calendrier
+            // Par exemple :
+            headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            initialView: 'dayGridMonth',
+            events: [
+            // Vos événements ici
+            ]
+        });
+
+        calendar.render();
+        });
+
+    </script>
 </body>
 </html>
