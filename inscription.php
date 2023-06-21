@@ -43,7 +43,11 @@ $mail = new PHPMailer(true);
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->isSMTP();
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+<<<<<<< HEAD
     $mail->Username   = 'automailteststevenix@gmail.com';                     //SMTP username
+=======
+    $mail->Username   = 'automailbureau@miage-antilles.fr';                     //SMTP username
+>>>>>>> 4709daf (code php pour l'inscription)
     $mail->Password   = 'stevenix9710';                               //SMTP password
     $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
