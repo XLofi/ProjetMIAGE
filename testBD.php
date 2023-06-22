@@ -2,7 +2,7 @@
 // Informations de connexion à la base de données
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname = "sitemiage";
 
 // Connexion à la base de données
@@ -25,12 +25,12 @@ if ($result->num_rows > 0) {
 
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";
-        echo "<td>" . $row["id"] . "</td>";
-        echo "<td>" . $row["Nom"] . "</td>";
-        echo "<td>" . $row["Prenom"] . "</td>";
-        echo "<td>" . $row["NomJeuneFille"] . "</td>";
-        echo "<td>" . $row["DateNaissance"] . "</td>";
-        echo "<td>" . $row["MotDePasse"] . "</td>";
+        echo "<td>" . ($row["id"] ?? "") . "</td>";//les ?? check si l'array existe pour eviter une erreure
+        echo "<td>" . ($row["Nom"] ?? "") . "</td>";
+        echo "<td>" . ($row["Prenom"] ?? "") . "</td>";
+        echo "<td>" . ($row["NomJeuneFille"] ?? "") . "</td>";
+        echo "<td>" . ($row["DateNaissance"] ?? "") . "</td>";
+        echo "<td>" . ($row["MotDePasse"] ?? "") . "</td>";
         echo "</tr>";
     }
 
@@ -41,4 +41,3 @@ if ($result->num_rows > 0) {
 
 // Fermer la connexion à la base de données
 $conn->close();
-
