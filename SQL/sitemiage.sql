@@ -36,6 +36,15 @@ CREATE TABLE `adresseetudiant` (
   `personne_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE `parent` (
+    `id` INT PRIMARY KEY,
+    `personne_id` INT,
+    `nom` VARCHAR(50),
+    `prenom` VARCHAR(50),
+    `adresse` VARCHAR(100),,
+    `personne_id` int(11) DEFAULT NULL
+);
+
 -- --------------------------------------------------------
 
 --

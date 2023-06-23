@@ -1,17 +1,6 @@
 <?php
-// Informations de connexion à la base de données
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sitemiage";
-
-// Connexion à la base de données
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Vérifier la connexion
-if ($conn->connect_error) {
-    die("La connexion à la base de données a échoué : " . $conn->connect_error);
-}
+global $conn;
+include("config.php");
 
 // Requête pour récupérer les données de la table "Personne"
 $sql = "SELECT * FROM personne";
