@@ -165,26 +165,16 @@ function addStages() {
   const ouiBtn = document.getElementById("ouiBtn");
   ouiBtn.addEventListener("click", addStages);
 
-  
-  $(document).ready(function() {
-    $('#calendar').fullCalendar({
-      // Options du calendrier
-      // Par exemple :
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay'
-      },
-      events: [
-        // Liste des événements à afficher dans le calendrier
-        // Par exemple :
-        {
-          title: 'Mon événement',
-          start: '2023-05-01',
-          end: '2023-05-02'
-        },
-        // Ajoutez d'autres événements ici...
-      ]
-    });
-  });
+  // Importer la bibliothèque Day.js
+    // Assurez-vous d'inclure le fichier day.js dans votre projet
+
+    // Sélectionner l'élément du calendrier
+    const calendarElement = document.getElementById('calendar');
+
+    // Initialiser la date du calendrier avec la date actuelle
+    const currentDate = dayjs();
+
+    // Afficher le calendrier
+    calendarElement.textContent = currentDate.format('DD/MM/YYYY');
+
   
