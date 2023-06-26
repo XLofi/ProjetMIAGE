@@ -16,14 +16,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // L'utilisateur est connecté avec succès
-        // Rediriger vers la page de succès ou effectuer d'autres actions
-        header("Location: home.html");
-        exit();
+        // Récupérer les données de l'utilisateur
+        $row = $result->fetch_assoc();
+        $compte = $row['Compte'];
+
+        // Vérifier la valeur de la colonne "Compte"
+        if ($compte == 'E') {
+            // Rediriger vers la page de succès pour les utilisateurs avec un compte actif
+            header("Location: home.html");
+            exit();
+        } else if ($compte == 'A') {
+            // Rediriger vers une autre page pour les utilisateurs sans compte actif
+            header("Location: listes.php");
+            exit();
+        }
     } else {
         // Les informations d'identification sont incorrectes
         echo "Identifiants incorrects. Veuillez réessayer.";
     }
+
 
     $conn->close();
 }
