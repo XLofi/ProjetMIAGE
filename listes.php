@@ -48,9 +48,9 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Prenom</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">email</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -62,21 +62,22 @@
                             }
 
                             // Récupérer les données depuis la base de données et les afficher dans le tableau
-                            $sql = "SELECT * FROM personne";
+                            $sql = "SELECT * FROM personne,adresseetudiant where personne_id=personne.id";
                             $result = $conn->query($sql);
 
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                                     echo "<tr>";
                                     echo "<th scope='row'>" . $row["id"] . "</th>";
-                                    echo "<td>" . $row["Nom"] . "</td>";
-                                    echo "<td>" . $row["Prenom"] . "</td>";
-                                    echo "<td>" . $row["DateNaissance"] . "</td>";
+                                    echo "<td><a href='detail.php?id=" . $row["id"] . "'>" . $row["Nom"] . "</a></td>";
+                                    echo "<td><a href='detail.php?id=" . $row["id"] . "'>" . $row["Prenom"] . "</a></td>";
+                                    echo "<td><a href='detail.php?id=" . $row["id"] . "'>" . $row["Email"] . "</a></td>";
                                     echo "</tr>";
                                 }
                             } else {
                                 echo "<tr><td colspan='4'>Aucun résultat trouvé.</td></tr>";
                             }
+
 
                             $conn->close();
                             ?>
