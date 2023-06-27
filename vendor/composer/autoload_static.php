@@ -4,6 +4,7 @@
 
 namespace Composer\Autoload;
 
+<<<<<<< HEAD
 class ComposerStaticInitfb8795f17cda57439c3a91c5276f9d90
 {
     public static $prefixLengthsPsr4 = array (
@@ -23,10 +24,19 @@ class ComposerStaticInitfb8795f17cda57439c3a91c5276f9d90
         'D' => 
         array (
             'Dompdf\\' => 7,
+=======
+class ComposerStaticInitd23f227c6fd68cb370567d275c3a39e1
+{
+    public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+>>>>>>> 61a0f0b (Ajout phpmailer)
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+<<<<<<< HEAD
         'Svg\\' => 
         array (
             0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg',
@@ -46,20 +56,34 @@ class ComposerStaticInitfb8795f17cda57439c3a91c5276f9d90
         'Dompdf\\' => 
         array (
             0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
+=======
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+>>>>>>> 61a0f0b (Ajout phpmailer)
         ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+<<<<<<< HEAD
         'Dompdf\\Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
+=======
+>>>>>>> 61a0f0b (Ajout phpmailer)
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInitfb8795f17cda57439c3a91c5276f9d90::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitfb8795f17cda57439c3a91c5276f9d90::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInitfb8795f17cda57439c3a91c5276f9d90::$classMap;
+=======
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd23f227c6fd68cb370567d275c3a39e1::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd23f227c6fd68cb370567d275c3a39e1::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitd23f227c6fd68cb370567d275c3a39e1::$classMap;
+>>>>>>> 61a0f0b (Ajout phpmailer)
 
         }, null, ClassLoader::class);
     }
