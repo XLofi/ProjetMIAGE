@@ -218,6 +218,18 @@ h2,h4{
       color:#fff!important ;
       margin-bottom: 2vh;
     }
-    .cdColor{
-      background-color: #f5f5f5;
+    .cdColor {
+      background-color: #f8f9fa; /* Couleur de fond de la carte */
+      border-color: #ced4da; /* Couleur de bordure de la carte */
+    }
+    
+    .cdHeader {
+      background-color: #e9ecef; /* Couleur de fond de l'en-tête de la carte */
+    }
+    
+    .cdButton {
+      color: #343a40; /* Couleur du texte du bouton de la carte */
+    }
+    #imgLogo{
+      width: 15vw;
     }

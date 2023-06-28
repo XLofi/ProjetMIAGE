@@ -4,269 +4,413 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Détails</title>
     <link rel="stylesheet" href="/styles/bootstrap.min.css">
     <script src="scripts/script.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/all.min.css">
     <link rel="stylesheet" href="/styles/style.css">
 
 </head>
 <body>
-    <div class="container">
-
-        <div class="row" id="bg_color">
-            <div class="col-md-12">
-                <nav aria-label="breadcrumb ">Listes</nav>
-                <h2>Postulant : Yamin Goudou</h2>
-            </div>
-            <div id="accordion">
-                <div class="card cdColor">
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Infos. Personelles
-                            </button>
-                        </h5>
-                    </div>
-
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                            <div class="col-md-6">
-                                <label for="inputNom" class="form-label">Nom</label>
-                                <input type="text" class="form-control" id="inputNom" value="Goudou" disabled>
+    <div class="container-fluid">
+        <div id="divImageLogo" >
+            <img src="assets/MiageLogo.png" alt="Your image description" id="imgLogo">
+        </div>
+        <div class="container">
+            <div class="row" id="bg_color">
+                <div class="col-md-12">
+                    <nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>';" >
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="listes.php"><i class="fas fa-home"></i> Accueil</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Listes</li>
+                        </ol>
+                    </nav>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Postulant : Yamin Goudou</h2>
+                        </div>
+                        <!-- Transformer en formulaire pour le choix du statut -->
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <select class="form-control" id="statusSelect">
+                                    <option selected>Choisir un statut...</option>
+                                    <option value="valider">&#x2714; Valider l'inscription</option>
+                                    <option value="attente">&#x23F3; Mettre en attente</option>
+                                    <option value="refuse" >&#x274C; Refusé</option>
+                                </select>
                             </div>
-                            <div class="col-md-6">
-                                <label for="inputPrenom" class="form-label">Prénom</label>
-                                <input type="text" class="form-control" id="inputPrenom" value="Yamin" disabled>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputNomJF" class="form-label">Nom de jeune fille</label>
-                                <input type="text" class="form-control" id="inputNomJF" disabled>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputDateNaissance" class="form-label">Date de naissance</label>
-                                <input type="date" name="" id="inputDateNaissance" class="form-control" value="13-08-2002" disabled>
-                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-primary">OK</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="card cdColor">
-                    <div class="card-header" id="headingTwo">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Coordonnées
+                
+                <div id="accordion">
+                    
+                    <div class="card cdColor">
+                        <div class="card-header cdHeader" id="headingOne">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link cdButton" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Infos. Personnelles
                             </button>
-                        </h5>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                        <div class="card-body">
-                            <div class="col-12">
-                                <label for="inputAddress" class="form-label">Adresse</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" disabled>
+                          </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label for="inputNom" class="form-label">Nom</label>
+                                  <input type="text" class="form-control" id="inputNom" value="Goudou" disabled>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label for="inputPrenom" class="form-label">Prénom</label>
+                                  <input type="text" class="form-control" id="inputPrenom" value="Yamin" disabled>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label for="inputNomJF" class="form-label">Nom de jeune fille</label>
+                                  <input type="text" class="form-control" id="inputNomJF" disabled>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label for="inputDateNaissance" class="form-label">Date de naissance</label>
+                                  <input type="date" class="form-control" id="inputDateNaissance" value="2002-08-13" disabled>
+                                </div>
+                              </div>
                             </div>
-                            <div class="col-12">
-                                <label for="inputAddress2" class="form-label">Complément d'adresse</label>
-                                <input type="text" class="form-control" id="inputAddress2" placeholder="Appartement, lieu-dit, ..." disabled>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    <div class="card cdColor">
+                        <div class="card cdColor">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Coordonnées
+                                    </button>
+                                </h5>
                             </div>
-                            <div class="col-md-6">
-                                <label for="inputCity" class="form-label">Ville</label>
-                                <input type="text" class="form-control" id="inputCity" value="Saint-François" disabled>
-                            </div>
-                            <div class="col-md-2">
-                                <label for="inputZip" class="form-label">Code postal</label>
-                                <input type="text" class="form-control" id="inputZip" value="97118" disabled>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputTelFixe" class="form-label">Téléphone fixe</label>
-                                <input type="tel" class="form-control" id="inputTelFixe" value="0590000000" disabled>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputTelPort" class="form-label">Mobile</label>
-                                <input type="tel" class="form-control" id="inputTelPort" value="0690000000" disabled>
+                        
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="inputAddress" class="form-label">Adresse</label>
+                                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="inputAddress2" class="form-label">Complément d'adresse</label>
+                                                <input type="text" class="form-control" id="inputAddress2" placeholder="Appartement, lieu-dit, ..." disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputCity" class="form-label">Ville</label>
+                                                <input type="text" class="form-control" id="inputCity" value="Saint-François" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="inputZip" class="form-label">Code postal</label>
+                                                <input type="text" class="form-control" id="inputZip" value="97118" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputTelFixe" class="form-label">Téléphone fixe</label>
+                                                <input type="tel" class="form-control" id="inputTelFixe" value="0590000000" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputTelPort" class="form-label">Mobile</label>
+                                                <input type="tel" class="form-control" id="inputTelPort" value="0690000000" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        
                     </div>
-                </div>
-                <div class="card cdColor">
-                    <div class="card-header" id="headingThree">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Baccalauréat
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                        <div class="card-body">
-                            <div class="col-md-6">
-                                <label for="inputSerie" class="form-label">Série / Spécialités</label>
-                                <input type="text" class="form-control" id="inputSerie" value="Scientifique" disabled>
+                    <div class="card cdColor">
+                        <div class="card cdColor">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Baccalauréat
+                                    </button>
+                                </h5>
                             </div>
-                            <div class="col-md-6">
-                                <label for="inputMention" class="form-label">Mention</label>
-                                <input type="text" class="form-control" id="inputMention" value="Bien" disabled>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputAnneeBac" class="form-label">Année d'obtention</label>
-                                <input type="number" class="form-control" id="inputAnneeBac" min="1990" max="2023" step="1" value="2020" disabled>
-                            </div>
-                            
-                            <div class="col-md-6">
-                                <label for="inputEtablissement" class="form-label">Établissement d'obtention</label>
-                                <input type="text" class="form-control" id="inputEtablissement" value="LGT Yves Leborgne" disabled>
-                            </div>
-                            <div class="input-group mb-3">
-                                <a href="">Lien vers fichier du bac</a>
+                        
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputSerie" class="form-label">Série / Spécialités</label>
+                                                <input type="text" class="form-control" id="inputSerie" value="Scientifique" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputMention" class="form-label">Mention</label>
+                                                <input type="text" class="form-control" id="inputMention" value="Bien" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputAnneeBac" class="form-label">Année d'obtention</label>
+                                                <input type="number" class="form-control" id="inputAnneeBac" min="1990" max="2023" step="1" value="2020" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputEtablissement" class="form-label">Établissement d'obtention</label>
+                                                <input type="text" class="form-control" id="inputEtablissement" value="LGT Yves Leborgne" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="input-group mb-3">
+                                                <a href="">Lien vers fichier du bac</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        
                     </div>
-                </div>
-
-                <div class="card cdColor">
-                    <div class="card-header" id="headingFour">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                Cursus
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                        <div class="card-body">
-                            <h4 style="text-align: center;" class="formH4"><u>Premier cursus</u></h4>
-                            <div class="col-md-6">
-                                <label for="inputIntitule1" class="form-label">Intitulé</label>
-                                <input type="text" class="form-control" id="inputIntitule1">
+    
+                    <div class="card cdColor">
+                        <div class="card cdColor">
+                            <div class="card-header" id="headingFour">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Cursus
+                                    </button>
+                                </h5>
                             </div>
-                            <div class="col-md-6">
-                                <label for="inputAnneeCursus1" class="form-label">Année d'obtention</label>
-                                <input type="number" class="form-control" id="inputAnneeCursus1" min="1990" max="2023" step="1">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputEtablissement1" class="form-label">Établissement d'obtention</label>
-                                <input type="text" class="form-control" id="inputEtablissement1">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputMoyenne1" class="form-label">Moyenne</label>
-                                <input type="number" class="form-control" id="inputMoyenne1">
-                            </div>
-                            <div class="input-group mb-3">
-                                <a href="">Lien vers le diplôme 1</a>
-                            </div>
-
-                            <h4 style="text-align: center;" class="formH4"><u>Deuxième cursus</u></h4>
-                            <div class="col-md-6">
-                                <label for="inputIntitule2" class="form-label">Intitulé</label>
-                                <input type="text" class="form-control" id="inputIntitule2">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputAnneeCursus2" class="form-label">Année d'obtention</label>
-                                <input type="number" class="form-control" id="inputAnneeCursus2" min="1990" max="2023" step="1">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputEtablissement2" class="form-label">Établissement d'obtention</label>
-                                <input type="text" class="form-control" id="inputEtablissement2">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputMoyenne2" class="form-label">Moyenne</label>
-                                <input type="number" class="form-control" id="inputMoyenne2">
-                            </div>
-                            <div class="input-group mb-3">
-                                <a href="">Lien vers le diplôme 2</a>
-                            </div>
-                            <h4 style="text-align: center;" class="formH4"><u>Autres diplômes obtenus</u></h4>
-                            <div class="col-md-6">
-                                <label for="inputIntitule3" class="form-label">Intitulé</label>
-                                <input type="text" class="form-control" id="inputIntitule3">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputAnneeCursus3" class="form-label">Année d'obtention</label>
-                                <input type="number" class="form-control" id="inputAnneeCursus3" min="1990" max="2023" step="1">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputEtablissement3" class="form-label">Établissement d'obtention</label>
-                                <input type="text" class="form-control" id="inputEtablissement3">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputMoyenne3" class="form-label">Moyenne</label>
-                                <input type="number" class="form-control" id="inputMoyenne3">
-                            </div>
-                            <div class="input-group mb-3">
-                                <a href="">Lien vers le diplôme 3</a>
+                        
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h4 style="text-align: center;" class="formH4"><u>Premier cursus</u></h4>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputIntitule1" class="form-label">Intitulé</label>
+                                                <input type="text" class="form-control" id="inputIntitule1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputAnneeCursus1" class="form-label">Année d'obtention</label>
+                                                <input type="number" class="form-control" id="inputAnneeCursus1" min="1990" max="2023" step="1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputEtablissement1" class="form-label">Établissement d'obtention</label>
+                                                <input type="text" class="form-control" id="inputEtablissement1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputMoyenne1" class="form-label">Moyenne</label>
+                                                <input type="number" class="form-control" id="inputMoyenne1">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="input-group mb-3">
+                                                <a href="">Lien vers le diplôme 1</a>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="col-12">
+                                            <h4 style="text-align: center;" class="formH4"><u>Deuxième cursus</u></h4>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputIntitule2" class="form-label">Intitulé</label>
+                                                <input type="text" class="form-control" id="inputIntitule2">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputAnneeCursus2" class="form-label">Année d'obtention</label>
+                                                <input type="number" class="form-control" id="inputAnneeCursus2" min="1990" max="2023" step="1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputEtablissement2" class="form-label">Établissement d'obtention</label>
+                                                <input type="text" class="form-control" id="inputEtablissement2">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputMoyenne2" class="form-label">Moyenne</label>
+                                                <input type="number" class="form-control" id="inputMoyenne2">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="input-group mb-3">
+                                                <a href="">Lien vers le diplôme 2</a>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="col-12">
+                                            <h4 style="text-align: center;" class="formH4"><u>Autres diplômes obtenus</u></h4>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputIntitule3" class="form-label">Intitulé</label>
+                                                <input type="text" class="form-control" id="inputIntitule3">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputAnneeCursus3" class="form-label">Année d'obtention</label>
+                                                <input type="number" class="form-control" id="inputAnneeCursus3" min="1990" max="2023" step="1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputEtablissement3" class="form-label">Établissement d'obtention</label>
+                                                <input type="text" class="form-control" id="inputEtablissement3">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputMoyenne3" class="form-label">Moyenne</label>
+                                                <input type="number" class="form-control" id="inputMoyenne3">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="input-group mb-3">
+                                                <a href="">Lien vers le diplôme 3</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        
                     </div>
-                </div>
-
-                <div class="card cdColor">
-                    <div class="card-header" id="headingFive">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                Autres candidatures ?
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                        <div class="card-body">
-                            <h3 id="candidaturesZone">Autres candidatures ?</h3>
-                            <p style="display: inline-block; vertical-align: middle;">Avez-vous candidaté à d'autres formations ?</p>
-                            <!--Essayer de faire un bouton radio inline-->
-                            <div class="col-md-6">
-                                <label for="inputIntitule4" class="form-label">Intitulé</label>
-                                <input type="text" class="form-control" id="inputIntitule4" value="CAP Bokit" disabled>
+    
+                    <div class="card cdColor">
+                        <div class="card cdColor">
+                            <div class="card-header" id="headingFive">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Autres candidatures ?
+                                    </button>
+                                </h5>
                             </div>
-                            <div class="col-md-6">
-                                <label for="inputEtablissement4" class="form-label">Établissement</label>
-                                <input type="text" class="form-control" id="inputEtablissement4" value="Chez Lelene" disabled>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h3 id="candidaturesZone">Autres candidatures ?</h3>
+                                            <p style="display: inline-block; vertical-align: middle;">Avez-vous candidaté à d'autres formations ?</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputIntitule4" class="form-label">Intitulé</label>
+                                                <input type="text" class="form-control" id="inputIntitule4" value="CAP Bokit" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputEtablissement4" class="form-label">Établissement</label>
+                                                <input type="text" class="form-control" id="inputEtablissement4" value="Chez Lelene" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        
                     </div>
-                </div>
-
-                <div class="card cdColor">
-                    <div class="card-header" id="headingSix">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                Stages
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
-                        <div class="card-body">
-                            <h3 id="stagesZone">Stages</h3>
-                            <div class="col-md-12">
-                                <label for="inputIntituleStage" class="form-label">Intitulé  du stage</label>
-                                <input type="text" class="form-control" id="inputIntituleStage" value="Vente de plantes médicinales" disabled>
+    
+                    <div class="card cdColor">
+                        <div class="card cdColor">
+                            <div class="card-header" id="headingSix">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        Stages
+                                    </button>
+                                </h5>
                             </div>
-                            <div class="col-md-6">
-                                <label for="inputAnneeRealisation" class="form-label">Année de réalisation</label>
-                                <input type="number" class="form-control" id="inputAnneeRealisation" min="1990" max="2023" step="1" value="2021" disabled>
+                            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h3 id="stagesZone">Stages</h3>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputIntituleStage" class="form-label">Intitulé du stage</label>
+                                                <input type="text" class="form-control" id="inputIntituleStage" value="Vente de plantes médicinales" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputAnneeRealisation" class="form-label">Année de réalisation</label>
+                                                <input type="number" class="form-control" id="inputAnneeRealisation" min="1990" max="2023" step="1" value="2021" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputNomEntreprise" class="form-label">Entreprise du stage</label>
+                                                <input type="text" class="form-control" id="inputNomEntreprise" value="Marie & Jeanne" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="inputMissions" class="form-label">Missions réalisées</label>
+                                                <textarea class="form-control" id="inputMissions" rows="3" placeholder="Décrivez les missions réalisées..." disabled>Skonk, creepy, ...</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="input-group mb-3">
+                                                <a href="">Lien vers l'attestation de stage</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <label for="inputNomEntreprise" class="form-label">Entreprise du stage</label>
-                                <input type="text" class="form-control" id="inputNomEntreprise" value="Marie & Jeanne" disabled>
-                            </div>
-                            <div class="col-md-12">
-                                <label for="inputMissions" class="form-label">Missions réalisées</label>
-                                <input type="text" class="form-control" id="inputMissions" placeholder="Décrivez les missions réalisées..." value="Skonk, creepy, ..." disabled>
-                            </div>
-                            <div class="input-group mb-3">
-                                <a href="">Lien vers l'attestation de stage</a>
-                            </div>
-                            
                         </div>
+                        
                     </div>
                 </div>
-            </div>
-            <div class="col-md-10"></div>
-            <div class="col-md-2 text-center mt-3">
-                <button type="button" class="btn btn-success" id="exportBtn"> Exporter </button>
-            </div>
-        </div> 
-        
-           
+                <div class="col-md-10"></div>
+                  <div class="col-md-2 text-center mt-3">
+                    <button type="button" class="btn btn-success" id="exportBtn">Exporter</button>
+                  </div>
+                  
+            </div> 
+            
+               
+        </div>
     </div>
+    
 </body>
 </html>
