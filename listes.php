@@ -47,7 +47,7 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <!-- <th scope="col">#</th> -->
                                 <th scope="col">Prenom</th>
                                 <th scope="col">Nom</th>
                                 <th scope="col">email</th>
@@ -68,7 +68,7 @@
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                                     echo "<tr>";
-                                    echo "<th scope='row'>" . $row["id"] . "</th>";
+                                    // echo "<th scope='row'>" . $row["id"] . "</th>";
                                     echo "<td><a href='detail.php?id=" . $row["id"] . "'>" . $row["Nom"] . "</a></td>";
                                     echo "<td><a href='detail.php?id=" . $row["id"] . "'>" . $row["Prenom"] . "</a></td>";
                                     echo "<td><a href='detail.php?id=" . $row["id"] . "'>" . $row["Email"] . "</a></td>";
@@ -77,8 +77,6 @@
                             } else {
                                 echo "<tr><td colspan='4'>Aucun résultat trouvé.</td></tr>";
                             }
-
-
                             $conn->close();
                             ?>
                             </tbody>
@@ -90,6 +88,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>
