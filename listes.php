@@ -81,6 +81,19 @@
                             ?>
                             </tbody>
                         </table>
+                        <script>
+                            // Code JavaScript pour compter le nombre d'éléments
+                            var tbody = document.querySelector("tbody");
+                            var rowCount = tbody.rows.length;
+
+                            var newRow = document.createElement("tr");
+                            var countCell = document.createElement("td");
+                            countCell.setAttribute("colspan", "3");
+                            countCell.textContent = "Nombre d'éléments : " + rowCount;
+                            newRow.appendChild(countCell);
+
+                            tbody.appendChild(newRow);
+                        </script>
                     </div>
                 </div>
                 <div class="col-md-5" id="calendar"></div>

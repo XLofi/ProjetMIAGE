@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-    <script src="scripts/script.js"></script>
+    <script src="../scripts/script.js"></script>
 </head>
 <body>
 <div class="container-fluid" id="layoutDashboardEtudiant">
 
     <div id="divImageLogo">
-        <img src="assets/MiageLogo.png" alt="Your image description">
+        <img src="../assets/MiageLogo.png" alt="Your image description">
     </div>
 
     <div class="row">
@@ -26,10 +26,10 @@
             </div>
             <div id="elements">
                 <ul>
-                    <li><img src="assets/maison.png" alt="" srcset="" class="img-fluid"></li>
-                    <li><img src="assets/lister.png" alt="" srcset="" class="img-fluid"></li>
-                    <li><img src="assets/notification.png" alt="" srcset="" class="img-fluid"></li>
-                    <li><img src="assets/parametre.png" alt="" srcset="" class="img-fluid"></li>
+                    <li><img src="../assets/maison.png" alt="" srcset="" class="img-fluid"></li>
+                    <li><img src="../assets/lister.png" alt="" srcset="" class="img-fluid"></li>
+                    <li><img src="../assets/notification.png" alt="" srcset="" class="img-fluid"></li>
+                    <li><img src="../assets/parametre.png" alt="" srcset="" class="img-fluid"></li>
                 </ul>
             </div>
         </div>
@@ -70,19 +70,6 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <script>
-                            // Code JavaScript pour compter le nombre d'éléments
-                            var tbody = document.querySelector("tbody");
-                            var rowCount = tbody.rows.length;
-                        
-                            var newRow = document.createElement("tr");
-                            var countCell = document.createElement("td");
-                            countCell.setAttribute("colspan", "3");
-                            countCell.textContent = "Nombre d'éléments : " + rowCount;
-                            newRow.appendChild(countCell);
-                        
-                            tbody.appendChild(newRow);
-                        </script>
                     </div>
                 </div>
                 <div class="col-md-5" id="calendar"></div>
