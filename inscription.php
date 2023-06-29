@@ -113,7 +113,7 @@ $mail = new PHPMailer(true);
     $mail->isSMTP();
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
 
-    $mail->Username   = 'automailbbureaumiage@gmail.com';                     //SMTP username
+    $mail->Username   = 'haliarobed@gmail.com';                     //SMTP username
 
                        //SMTP username
 
