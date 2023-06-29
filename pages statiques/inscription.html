@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S'inscrire</title>
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/style.css">
-    <script src="scripts/script.js"></script>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="../scripts/script.js"></script>
 </head>
 
 <body>
@@ -16,12 +16,11 @@
     <div class="container-fluid" id="layoutFirst">
         <div class="row justify-content-center align-items-center" style="height: 100vh;">
             <div class="col-md-5">
-                <form action="inscription.php" method="post">
-                    <div id="form"
+                <div id="form"
                     class="d-flex justify-content-center shadow p-3 mb-5 bg-body rounded  border border-primary">
                     <div class="col-md-10">
                         <h2 style="text-align: center;">S'inscrire</h2>
-                        <form action="inscription.php" method="POST">
+                        <form action="../inscription.php" method="POST">
                             <div class="row g-2 mb-3">
                                 <div class="col-md">
                                     <div class="form-floating">
@@ -49,7 +48,7 @@
                                 <button class="btn password-toggle-btn" type="button"
                                     onclick="togglePassword('inputPassword', 'oeil')"
                                     style="background-color: #695cee;">
-                                    <img src="assets/oeil.png" alt="" srcset="" id="oeil">
+                                    <img src="../assets/oeil.png" alt="" srcset="" id="oeil">
                                 </button>
                             </div>
                             <div class="mb-3 form-floating d-flex">
@@ -59,21 +58,19 @@
                                 <button class="btn password-toggle-btn" type="button"
                                     onclick="togglePassword('inputPasswordConfirm', 'oeilConfirm')"
                                     style="background-color: #695cee;">
-                                    <img src="assets/oeil.png" alt="" srcset="" id="oeilConfirm">
+                                    <img src="../assets/oeil.png" alt="" srcset="" id="oeilConfirm">
                                 </button>
                             </div>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary" type="submit" id="btnInscription">Inscription !</button>
+                                <p><a href="connexion.html">Déjà un compte ? Connectez-vous !</a></p>
+                            </div>
                         </form>
-
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-primary" type="button" id="btnInscription" disabled>Inscription !</button>
-                            <p><a href="connexion.html">Déjà un compte ? Connectez-vous !</a></p>
-                        </div>
                     </div>
                 </div>
-                </form>
             </div>
             <div class="col-md-7 colImage" id="colImage">
-                <img src="assets/MiageLogo.png" alt="" class="img-fluid w-200" id="imgMiage">
+                <img src="../assets/MiageLogo.png" alt="" class="img-fluid w-200" id="imgMiage">
             </div>
         </div>
     </div>

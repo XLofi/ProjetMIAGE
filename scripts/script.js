@@ -3,10 +3,10 @@ function togglePassword(id, idOeuil) {
     var oeilImg = document.getElementById(idOeuil);
     if (passwordInput.type === "password") {
         passwordInput.type = "text";
-        oeilImg.src = "assets/cacher.png";
+        oeilImg.src = "../assets/cacher.png";
     } else {
         passwordInput.type = "password";
-        oeilImg.src = "assets/oeil.png";
+        oeilImg.src = "../assets/oeil.png";
     }
 }
 
@@ -162,19 +162,23 @@ function addStages() {
     autreStages.insertAdjacentElement("beforebegin", stageDiv);
   }
   
-  const ouiBtn = document.getElementById("ouiBtn");
-  ouiBtn.addEventListener("click", addStages);
+function genererMotDePasse() {
+    var passwordInput = document.getElementById("inputPassword");
+    // Définir les caractères utilisables pour le mot de passe
+    var caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+~`|}{[]\:;?><,./-=";
 
-  // Importer la bibliothèque Day.js
-    // Assurez-vous d'inclure le fichier day.js dans votre projet
+    var motDePasse = "";
 
-    // Sélectionner l'élément du calendrier
-    const calendarElement = document.getElementById('calendar');
-
-    // Initialiser la date du calendrier avec la date actuelle
-    const currentDate = dayjs();
-
-    // Afficher le calendrier
-    calendarElement.textContent = currentDate.format('DD/MM/YYYY');
+    // Générer chaque caractère du mot de passe
+    for (var i = 0; i < 8; i++) {
+        // Obtenir un caractère aléatoire à partir de la liste de caractères
+        var caractereAleatoire = caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+        
+        // Ajouter le caractère au mot de passe
+        motDePasse += caractereAleatoire;
+    }
+    console.log(motDePasse);
+    passwordInput.value = motDePasse;
+}
 
   

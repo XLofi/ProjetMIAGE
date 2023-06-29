@@ -72,10 +72,7 @@
                         </div>
                     </div>
                     <div class="col-md-5" id="calendar"></div>
-                      
                 </div>
-                
-               
             </div>
         </div>
     </div>
