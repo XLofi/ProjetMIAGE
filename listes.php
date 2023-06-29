@@ -89,7 +89,7 @@
                             var newRow = document.createElement("tr");
                             var countCell = document.createElement("td");
                             countCell.setAttribute("colspan", "3");
-                            countCell.textContent = "Nombre d'éléments : " + rowCount;
+                            countCell.textContent = "Nombre d'étudiants inscrits : " + rowCount;
                             newRow.appendChild(countCell);
 
                             tbody.appendChild(newRow);
