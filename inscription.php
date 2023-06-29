@@ -1,6 +1,6 @@
 <?php
 // Vérifier si le formulaire a été soumis
-/*include ('config.php');
+include ('config.php');
 global $conn;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupérer les valeurs soumises par le formulaire
@@ -26,16 +26,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Une erreur s'est produite lors de l'inscription : " . $conn->error;
     }
 
-$conn->close();*/
+$conn->close();
 
 
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+require 'vendor/phpmailer/phpmailer/src/Exception.php';
+require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 
 $mail = new PHPMailer(true);
 
@@ -78,8 +78,8 @@ $mail = new PHPMailer(true);
       </head>
       <body>
         <div style="border:5px solid cyan; padding:1%">
-          <h3>Félicitations '.$_POST[$inputPrenom].' '.$_POST[$inputNom].'</h3>
-          <p>Cher étudiant(e) '.$inputNom.'</p>
+          <h3>Félicitations '.$_POST[$prenom].' '.$_POST[$nom].'</h3>
+          <p>Cher étudiant(e) '.$nom.'</p>
           <p>
           Nous sommes ravis de vous informer que votre demande d\'inscription pour la Licence 3 en Méthodes Informatiques Appliquées à la Gestion des Entreprises (MIAGE) a été reçue avec succès.
           Nous apprécions grandement votre intérêt pour notre programme et nous sommes impatients de vous accueillir au sein de notre institution.
