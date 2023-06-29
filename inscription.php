@@ -1,6 +1,6 @@
 <?php
 // Vérifier si le formulaire a été soumis
-include ('config.php');
+/*include ('config.php');
 global $conn;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupérer les valeurs soumises par le formulaire
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Une erreur s'est produite lors de l'inscription : " . $conn->error;
     }
 
-$conn->close();
+$conn->close();*/
 
 
 
@@ -43,45 +43,49 @@ $mail = new PHPMailer(true);
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->isSMTP();
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-<<<<<<< HEAD
-    $mail->Username   = 'automailteststevenix@gmail.com';                     //SMTP username
-=======
+
+    $mail->Username   = 'automailbbureaumiage@gmail.com';                     //SMTP username
+
     $mail->Username   = 'automailbureau@miage-antilles.fr';                     //SMTP username
->>>>>>> 4709daf (code php pour l'inscription)
+
     $mail->Password   = 'stevenix9710';                               //SMTP password
     $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //From email address and name
-    $mail->From = "stevenix@norely.com";
+    $mail->From = "automailbureau@miage-antilles.fr";
     $mail->FromName = "No Reply";
 
     //To address and name
-    $mail->addAddress($_POST["Email"]);
-
+    
+    //$mail->addAddress($_POST["inputEmail"]);
+    $email = $_POST["inputEmail"];
+    $mail->addAddress($email);
+    
     //Address to which recipient will reply
-    $mail->addReplyTo("bureaumiage@gmail.com", "No Reply");
+    $mail->addReplyTo("automailbureau@miage-antilles.fr", "No Reply");
+
 
     //Send HTML or Plain Text email
     $mail->isHTML(true);
 
-    $mail->Subject = "Confirmation De Reservation De Vol";
+    $mail->Subject = "Confirmation D\'inscription MIAGE Antilles";
     $mail->Body = '<!DOCTYPE html>
     <html lang="en" dir="ltr">
       <head>
         <meta charset="utf-8">
-        <h1>Confirmation De Reservation</h1>
+        <h1>Confirmation D\'inscription</h1>
       </head>
       <body>
         <div style="border:5px solid cyan; padding:1%">
-          <h3>Félicitations Bla Bla Bla</h3>
-          <p>Cher étudiant(e).'.$_POST["inputNom"].'</p>
+          <h3>Félicitations '.$_POST[$inputPrenom].' '.$_POST[$inputNom].'</h3>
+          <p>Cher étudiant(e) '.$inputNom.'</p>
           <p>
-          Nous sommes ravis de vous informer que votre demande d\'inscription pour la Licence 3 en Méthodes Informatiques Appliquées à la Gestion des Entreprises (MIAGE) a été reçue avec succès. 
+          Nous sommes ravis de vous informer que votre demande d\'inscription pour la Licence 3 en Méthodes Informatiques Appliquées à la Gestion des Entreprises (MIAGE) a été reçue avec succès.
           Nous apprécions grandement votre intérêt pour notre programme et nous sommes impatients de vous accueillir au sein de notre institution.
           </p>
           <p>Nous vous invitons à compléter votre inscription en fournissant les pièces justificatives nécessaires via notre formulaire de connexion sécurisé. Ce formulaire est conçu pour faciliter la soumission de vos documents et assurer la confidentialité de vos informations.
-
+    
           Veuillez suivre le lien ci-dessous pour accéder au formulaire de connexion :
             
             </p>
@@ -89,7 +93,8 @@ $mail = new PHPMailer(true);
         </div>
       </body>
     </html>
-';
+    ';
+    
     $mail->AltBody = "This is the plain text version of the email content";
 
     try {
