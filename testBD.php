@@ -3,7 +3,7 @@ global $conn;
 include("config.php");
 
 // Requête pour récupérer les données de la table "Personne"
-$sql = "SELECT * FROM personne";
+$sql = "SELECT * FROM personne,adresseetudiant where personne.id=adresseetudiant.id";
 $result = $conn->query($sql);
 
 // Vérifier si des données ont été trouvées
