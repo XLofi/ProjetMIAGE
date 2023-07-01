@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $prenom = $_POST['inputPrenom'];
     $email = $_POST['inputEmail'];
     $motDePasse = $_POST['inputPassword'];
-
+}
     // Insertion des données dans la base de données
     $sql1 = "INSERT INTO personne (nom, prenom, MotdePasse) VALUES ('$nom', '$prenom', '$motDePasse')";
     $sql2 = "INSERT INTO adresseetudiant (Email,personne_id) VALUES ('$email',LAST_INSERT_ID())";
@@ -96,3 +96,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 $conn->close();
 ?>
+
+
+
