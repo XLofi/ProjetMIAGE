@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Vérifier la valeur de la colonne "Compte"
         if ($compte == 'E') {
             // Rediriger vers la page de succès pour les utilisateurs avec un compte actif
-            header("Location: home.html");
+            header("Location: home.php");
             exit();
         } else if ($compte == 'A') {
             // Rediriger vers une autre page pour les utilisateurs sans compte actif
