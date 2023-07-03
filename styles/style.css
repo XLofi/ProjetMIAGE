@@ -13,6 +13,7 @@ body{
     font-family: 'Josefin Sans', sans-serif;
     background-color: #695cee;
     /*background-color: #c7c2ff;*/
+    scroll-behavior: smooth;
     
 }
 h2,h4{
