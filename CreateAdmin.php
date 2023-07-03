@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Exécution des requêtes SQL
     if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE) {
         // Redirection vers la page de tableau de bord de l'étudiant
-        ///header("Location: dashboardetudiant.php");
+        ///header("Location: dashboardetudiantl3.php");
         exit();
     } else {
         echo "Une erreur s'est produite lors de l'inscription : " . $conn->error;

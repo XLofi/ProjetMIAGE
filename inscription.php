@@ -76,6 +76,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
 // Vérification si des données ont été soumises via le formulaire
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Récupération des valeurs du formulaire
@@ -119,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             echo 'Message has been sent';
 
             // Redirection vers la page de tableau de bord de l'étudiant
-            header("Location: dashboardetudiant.php");
+            header("Location: dashboardetudiantl3.php");
             exit();
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
