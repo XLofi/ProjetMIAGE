@@ -76,6 +76,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
 // Vérification si des données ont été soumises via le formulaire
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Récupération des valeurs du formulaire
