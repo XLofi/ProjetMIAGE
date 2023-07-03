@@ -54,7 +54,7 @@
 
                         <div class="d-grid gap-2">
                             <button class="btn btn-primary" type="submit" id="btnInscription" disabled>Inscription !</button>
-                            <p><a href="connexion.html">Déjà un compte ? Connectez-vous !</a></p>
+                            <p><a href="connexion.php">Déjà un compte ? Connectez-vous !</a></p>
                         </div>
                     </div>
                 </div>
