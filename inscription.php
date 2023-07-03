@@ -72,6 +72,10 @@
 global $conn;
 include("config.php");
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 // Vérification si des données ont été soumises via le formulaire
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Récupération des valeurs du formulaire
@@ -79,17 +83,48 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $prenom = $_POST['inputPrenom'];
     $email = $_POST['inputEmail'];
     $motDePasse = $_POST['inputPassword'];
-}
+
     // Insertion des données dans la base de données
     $sql1 = "INSERT INTO personne (nom, prenom, MotdePasse) VALUES ('$nom', '$prenom', '$motDePasse')";
     $sql2 = "INSERT INTO adresseetudiant (Email,personne_id) VALUES ('$email',LAST_INSERT_ID())";
 
     // Exécution des requêtes SQL
     if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE) {
-        // Redirection vers la page de tableau de bord de l'étudiant
-        header("Location: dashboardetudiant.php");
-        exit();
-    } else {
+        // Envoi de l'e-mail de confirmation
+        $mail = new PHPMailer(true);
+
+        try {
+            // Server settings
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER; // Enable verbose debug output
+            $mail->isSMTP(); // Send using SMTP
+            $mail->Host = 'smtp.gmail.com'; // Set the SMTP server to send through
+            $mail->SMTPAuth = true; // Enable SMTP authentication
+            $mail->Username = 'obed.haliar@gmail.com'; // SMTP username
+            $mail->Password = 'jcfnqzhowioainxv'; // SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Enable TLS encryption, `PHPMailer::ENCRYPTION_STARTTLS` also accepted
+            $mail->Port = 465; // TCP port to connect to
+
+            // Recipients
+            $mail->setFrom('bureaumiage@gmail.com', 'Miage_Antilles');
+            $mail->addAddress($email); // Add a recipient
+            $mail->addReplyTo('haliarobed@gmail.com', 'Information');
+            // You can add CC and BCC recipients if needed
+
+            // Content
+            $mail->isHTML(true); // Set email format to HTML
+            $mail->Subject = 'Confirmation d\'inscription - Miage Antilles';
+            $mail->Body = 'This is the HTML message body <b>in bold!</b>';
+            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+            $mail->send();
+            echo 'Message has been sent';
+
+            // Redirection vers la page de tableau de bord de l'étudiant
+            header("Location: dashboardetudiant.php");
+            exit();
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
+} else {
         echo "Une erreur s'est produite lors de l'inscription : " . $conn->error;
     }
 }
