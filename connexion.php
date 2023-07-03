@@ -20,6 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $row = $result->fetch_assoc();
         $compte = $row['Compte'];
         session_start();
+        $_SESSION['Email'] = $email;
+        $_SESSION['MotDePasse'] = $motDePasse;
         $_SESSION['Compte'] = $compte;
 
         // Vérifier la valeur de la colonne "Compte"
