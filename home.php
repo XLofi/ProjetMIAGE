@@ -72,16 +72,28 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="row">
-                                        <h4>Licence 3 MIAGE</h4>
-                                        <button><a href="">Postuler</a></button>
+                                        <div class="col-md-7">
+                                            <h4><b>Licence 3 MIAGE</b></h4>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <button type="button" class="btn btn-success"><a href="">Postuler</a></button>
+                                        </div>
                                     </div>
                                     <div class="row">
-                                        <h4>Master 1 MIAGE</h4>
-                                        <button><a href="">Postuler</a></button>
+                                        <div class="col-md-7">
+                                            <h4><b>Master 1 MIAGE</b></h4>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <button type="button" class="btn btn-success"><a href="">Postuler</a></button>
+                                        </div>
                                     </div>
                                     <div class="row">
-                                        <h4>Master 2 MIAGE</h4>
-                                        <button><a href="">Postuler</a></button>
+                                        <div class="col-md-7">
+                                            <h4><b>Master 2 MIAGE</b></h4>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <button type="button" class="btn btn-success"><a href="">Postuler</a></button>
+                                        </div>
                                     </div>
                                 </div>
                                 
