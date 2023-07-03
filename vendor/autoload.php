@@ -24,4 +24,3 @@ require_once __DIR__ . '/composer/autoload_real.php';
 
 return ComposerAutoloaderInitfb8795f17cda57439c3a91c5276f9d90::getLoader();
 return ComposerAutoloaderInitd23f227c6fd68cb370567d275c3a39e1::getLoader();
->>>>>>> 61a0f0b (Ajout phpmailer)
