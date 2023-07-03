@@ -70,7 +70,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-8">
                                     <div class="row">
                                         <div class="col-md-7">
                                             <h4><b>Licence 3 MIAGE</b></h4>
