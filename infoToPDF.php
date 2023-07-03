@@ -2,7 +2,7 @@
 global $conn;
 require __DIR__ . "/vendor/autoload.php";
 use Dompdf\Dompdf;
-
+session_start();
 $dompdf = new Dompdf;
 
 

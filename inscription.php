@@ -81,11 +81,18 @@ require 'vendor/autoload.php';
 
 // Vérification si des données ont été soumises via le formulaire
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Démarage de session
+    session_start();
     // Récupération des valeurs du formulaire
     $nom = $_POST['inputNom'];
     $prenom = $_POST['inputPrenom'];
     $email = $_POST['inputEmail'];
     $motDePasse = $_POST['inputPassword'];
+
+    // Set des variables de session
+    $_SESSION['Email'] = $email;
+    $_SESSION['MotDePasse'] = $motDePasse;
+    $_SESSION['Compte'] = 'E';
 
     // Insertion des données dans la base de données
     $sql1 = "INSERT INTO personne (nom, prenom, MotdePasse) VALUES ('$nom', '$prenom', '$motDePasse')";
