@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container-fluid" id="layoutDashboardEtudiant">
-        <div id="divImageLogo" >
+        <div id="divImageLogo">
             <img src="assets/MiageLogo.png" alt="Your image description">
         </div>
           
@@ -89,10 +89,7 @@
                         </div>
                     </div>
                     <div class="col-md-5" id="calendar"></div>
-                      
                 </div>
-                
-               
             </div>
         </div>
     </div>
