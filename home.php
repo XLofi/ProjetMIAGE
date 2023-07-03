@@ -80,7 +80,7 @@
                                             <h4><b>Licence 3 MIAGE</b></h4>
                                         </div>
                                         <div class="col-md-5">
-                                            <button type="button" class="btn btn-success"><a href="">Postuler</a></button>
+                                            <button type="button" class="btn btn-success"><a href="dashboardetudiantl3.php">Postuler</a></button>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -88,7 +88,7 @@
                                             <h4><b>Master 1 MIAGE</b></h4>
                                         </div>
                                         <div class="col-md-5">
-                                            <button type="button" class="btn btn-success"><a href="">Postuler</a></button>
+                                            <button type="button" class="btn btn-success"><a href="dashboardetudiantm1.php">Postuler</a></button>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -96,7 +96,7 @@
                                             <h4><b>Master 2 MIAGE</b></h4>
                                         </div>
                                         <div class="col-md-5">
-                                            <button type="button" class="btn btn-success"><a href="">Postuler</a></button>
+                                            <button type="button" class="btn btn-success"><a href="dashboardetudiantm2.php">Postuler</a></button>
                                         </div>
                                     </div>
                                 </div>

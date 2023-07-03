@@ -33,7 +33,7 @@
         <div class="col-md-10" id="formCandidat">
             <div class="row">
 
-                <h2 id="nomFormation">Licence MIAGE</h2>
+                <h2 id="nomFormation">Licence MIAGE L3</h2>
                 <div class="col-md-3" id="etapesInscription">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item list-group-item-primary" id="itemListeInfosPZ"><a href="#infosPersoZone">Infos. personnelles</a></li>
