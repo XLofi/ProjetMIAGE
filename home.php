@@ -69,6 +69,23 @@
                                     <button class="learnMore">Voir plus ></button>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <h4>Licence 3 MIAGE</h4>
+                                        <button><a href="">Postuler</a></button>
+                                    </div>
+                                    <div class="row">
+                                        <h4>Master 1 MIAGE</h4>
+                                        <button><a href="">Postuler</a></button>
+                                    </div>
+                                    <div class="row">
+                                        <h4>Master 2 MIAGE</h4>
+                                        <button><a href="">Postuler</a></button>
+                                    </div>
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-5" id="calendar"></div>
