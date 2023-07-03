@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    global $conn;
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -25,8 +29,8 @@
                     <ul>
                         <li><img src="assets/maison.png" alt="" srcset="" class="img-fluid"></li>
                         <li><img src="assets/lister.png" alt="" srcset="" class="img-fluid"></li>
-                        <li><img src="assets/notification.png" alt="" srcset="" class="img-fluid"></li>
-                        <li><img src="assets/parametre.png" alt="" srcset="" class="img-fluid"></li>
+                        <!--<li><img src="../assets/notification.png" alt="" srcset="" class="img-fluid"></li>-->
+                        <!--<li><img src="../assets/parametre.png" alt="" srcset="" class="img-fluid"></li>-->
                     </ul>
                 </div>
             </div>
@@ -34,7 +38,7 @@
             <div class="col-md-10" id="homePage">
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 id="titleHome"><b>Bienvenue sur la page d'inscription à la formation MIAGE L3, M1, M2</b></h1>
+                        <h1 id="titleHome"><b>Bienvenue sur la page d'inscription à la formation MIAGE L3, M1, M2 <?php echo $_SESSION["Email"]?></b></h1>
                     </div>
                     <div class="col-md-4"></div>
                 </div>
