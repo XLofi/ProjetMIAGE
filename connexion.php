@@ -19,6 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Récupérer les données de l'utilisateur
         $row = $result->fetch_assoc();
         $compte = $row['Compte'];
+        session_start();
+        $_SESSION['Compte'] = $compte;
 
         // Vérifier la valeur de la colonne "Compte"
         if ($compte == 'E') {
