@@ -34,7 +34,7 @@
             <div class="col-md-10" id="homePage">
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 id="titleHome"><b>Bienvenue sur la page d'inscription à la formation MIAGE L3, M1, M2</b></h1>
+                        <h1 id="titleHome"><b>Bienvenue sur la page d'inscription à la formation MIAGE L3, M1, M2 <?php echo $_SESSION["Email"] ?></b></h1>
                     </div>
                     <div class="col-md-4"></div>
                 </div>
