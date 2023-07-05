@@ -324,10 +324,19 @@ $inputRadioStage2= $_POST['inputRadioStage2'];
 // Insertion des données dans la base de données
 $sql1 = "INSERT INTO personne (Nom, Prenom, EtatCandidature, NomJeuneFille, DateNaissance) 
 values ($inputNom,$inputPreNom,'?',$inputNomJF,$inputDateNaissance)";
+$id=("SELECT last_insert_id() from personne");
 $sql2 = "INSERT INTO adresseetudiant (Ville, CodePostal, Telephone, Mobile, personne_id) 
-values ($inputCity,$inputZip,$inputTelFixe,$inputTelPort, LAST_INSERT_ID())";
+values ($inputCity,$inputZip,$inputTelFixe,$inputTelPort, $id)";
 $sql3 = "INSERT INTO adresseetudiant (Ville, CodePostal, Telephone, Mobile, personne_id) 
-values ($inputCity,$inputZip,$inputTelFixe,$inputTelPort, LAST_INSERT_ID())";
-
+values ($inputCity,$inputZip,$inputTelFixe,$inputTelPort, $id)";
+$sql4 = "INSERT INTO baccalaureat (Serie, Mention, Annee, Lieu, personne_id) 
+values ($inputSerie,$inputMention,$inputAnnneeBac,$inputEtablissement,$id)";
+$sql5 = "INSERT INTO premiercycle (Annee1Intitule, Annee1AnneeObtention, Annee1Lieu, Annee1Moyenne, Annee2Intitule, 
+                          Annee2AnneeObtention, Annee2Lieu, Annee2Moyenne, AutresDiplomesIntitule, 
+                          AutresDiplomesAnneeObtention, AutresDiplomesLieu, AutresDiplomesMoyenne, personne_id) 
+values ($inputIntitule1,$inputAnneecursus1,$inputEtablisssemnt,$inputMoyenne1,$inputIntitule2,$inputAnneeCursus2,$inputEtablissement2,
+        $inputMoyenne2,$inputIntitule3,$inputAnneeCursus3,$inputEtablissement3,$inputMoyenne3,$id)";
+$sql6 = "INSERT INTO stagesentreprise (Stage, Theme, personne_id) 
+values ($inputIntituleStage,$inputNomEntreprise,$id)";
 ?>
 
