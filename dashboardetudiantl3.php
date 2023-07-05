@@ -253,19 +253,18 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-9"></div>
-                                <div class="col-md-3">adresseetudiant
-                                    <div class="d-grid gap-2">
-                                        <button type="button" class="btn btn-success">Confirmer</button>
-                                    </div>
-
-                                </div>
-                            </div>
                         </form>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-9"></div>
+                    <div class="col-md-3">
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">Confirmer</button>
+                        </div>
 
+                    </div>
+                </div>
             </div>
 
 
@@ -281,77 +280,63 @@ global $conn;
 if ($conn->connect_error) {
     die("La connexion à la base de données a échoué: " . $conn->connect_error);
 }
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    session_start();
-    //récupération des valeures du formulaire
-    $inputNom = $_POST['inputNom'];
-    $inputPreNom = $_POST['inputPrenom'];
-    $inputNomJF = $_POST['inputNomJF'];
-    $inputDateNaissance = $_POST['inputDateNaissance'];
-    $inputinputAddress = $_POST['inputAddress'];
-    $inputAddress2 = $_POST['inputAddress2'];
-    $inputCity = $_POST['inputCity'];
-    $inputZip = $_POST['inputZip'];
-    $inputTelFixe = $_POST['inputTelFixe'];
-    $inputTelPort = $_POST['inputTelPort'];
-    $inputSerie = $_POST['inputSerie'];
-    $inputMention = $_POST['inputMention'];
-    $inputAnnneeBac = $_POST['inputAnnneeBac'];
-    $inputEtablissement = $_POST['inputEtablissement'];
-    $inputGroupFileBac = $_POST['inputGroupFileBac'];
-    $inputIntitule1 = $_POST['inputIntitule1'];
-    $inputAnneecursus1 = $_POST['inputAnneecursus1'];
-    $inputEtablisssemnt = $_POST['inputEtablisssemnt'];
-    $inputMoyenne1 = $_POST['inputMoyenne1'];
-    $inputGroupFileCursus1 = $_POST['inputGroupFileCursus1'];
-    $inputIntitule2 = $_POST['inputIntitule2'];
-    $inputAnneeCursus2 = $_POST['inputAnneeCursus2'];
-    $inputEtablissement2 = $_POST['inputEtablissement2'];
-    $inputMoyenne2 = $_POST['inputMoyenne2'];
-    $inputGroupFileCursus2 = $_POST['inputGroupFileCursus2'];
-    $inputIntitule3 = $_POST['inputIntitule3'];
-    $inputAnneeCursus3 = $_POST['inputAnneeCursus3'];
-    $inputEtablissement3 = $_POST['inputEtablissement3'];
-    $inputMoyenne3 = $_POST['inputMoyenne3'];
-    $inputGroupFileCursus3 = $_POST['inputGroupFileCursus3'];
-    $inputIntitule4= $_POST['inputIntitule4'];
-    $inputEtablissement4 = $_POST['inputEtablissement4'];
-    $inputIntituleStage = $_POST['inputIntituleStage'];
-    $inputNomEntreprise = $_POST['inputNomEntreprise'];
-    $inputMissions = $_POST['inputMissions'];
-    $inputRadioStage1 = $_POST['inputRadioStage1'];
-    $inputRadioStage2= $_POST['inputRadioStage2'];
+//récupération des valeures du formulaire
+$inputNom = $_POST['inputNom'];
+$inputPreNom = $_POST['inputPrenom'];
+$inputNomJF = $_POST['inputNomJF'];
+$inputDateNaissance = $_POST['inputDateNaissance'];
+$inputinputAddress = $_POST['inputAddress'];
+$inputAddress2 = $_POST['inputAddress2'];
+$inputCity = $_POST['inputCity'];
+$inputZip = $_POST['inputZip'];
+$inputTelFixe = $_POST['inputTelFixe'];
+$inputTelPort = $_POST['inputTelPort'];
+$inputSerie = $_POST['inputSerie'];
+$inputMention = $_POST['inputMention'];
+$inputAnnneeBac = $_POST['inputAnnneeBac'];
+$inputEtablissement = $_POST['inputEtablissement'];
+$inputGroupFileBac = $_POST['inputGroupFileBac'];
+$inputIntitule1 = $_POST['inputIntitule1'];
+$inputAnneecursus1 = $_POST['inputAnneecursus1'];
+$inputEtablisssemnt = $_POST['inputEtablisssemnt'];
+$inputMoyenne1 = $_POST['inputMoyenne1'];
+$inputGroupFileCursus1 = $_POST['inputGroupFileCursus1'];
+$inputIntitule2 = $_POST['inputIntitule2'];
+$inputAnneeCursus2 = $_POST['inputAnneeCursus2'];
+$inputEtablissement2 = $_POST['inputEtablissement2'];
+$inputMoyenne2 = $_POST['inputMoyenne2'];
+$inputGroupFileCursus2 = $_POST['inputGroupFileCursus2'];
+$inputIntitule3 = $_POST['inputIntitule3'];
+$inputAnneeCursus3 = $_POST['inputAnneeCursus3'];
+$inputEtablissement3 = $_POST['inputEtablissement3'];
+$inputMoyenne3 = $_POST['inputMoyenne3'];
+$inputGroupFileCursus3 = $_POST['inputGroupFileCursus3'];
+$inputIntitule4= $_POST['inputIntitule4'];
+$inputEtablissement4 = $_POST['inputEtablissement4'];
+$inputIntituleStage = $_POST['inputIntituleStage'];
+$inputNomEntreprise = $_POST['inputNomEntreprise'];
+$inputMissions = $_POST['inputMissions'];
+$inputRadioStage1 = $_POST['inputRadioStage1'];
+$inputRadioStage2= $_POST['inputRadioStage2'];
+
 
 // Insertion des données dans la base de données
-    $sql1 = "INSERT INTO personne (Nom, Prenom, EtatCandidature, NomJeuneFille, DateNaissance) 
+$sql1 = "INSERT INTO personne (Nom, Prenom, EtatCandidature, NomJeuneFille, DateNaissance) 
 values ($inputNom,$inputPreNom,'?',$inputNomJF,$inputDateNaissance)";
-    $id=("SELECT last_insert_id() from personne");
-    $sql2 = "INSERT INTO adresseetudiant (Ville, CodePostal, Telephone, Mobile, personne_id) 
+$id=("SELECT last_insert_id() from personne");
+$sql2 = "INSERT INTO adresseetudiant (Ville, CodePostal, Telephone, Mobile, personne_id) 
 values ($inputCity,$inputZip,$inputTelFixe,$inputTelPort, $id)";
-    $sql3 = "INSERT INTO adresseetudiant (Ville, CodePostal, Telephone, Mobile, personne_id) 
+$sql3 = "INSERT INTO adresseetudiant (Ville, CodePostal, Telephone, Mobile, personne_id) 
 values ($inputCity,$inputZip,$inputTelFixe,$inputTelPort, $id)";
-    $sql4 = "INSERT INTO baccalaureat (Serie, Mention, Annee, Lieu, personne_id) 
+$sql4 = "INSERT INTO baccalaureat (Serie, Mention, Annee, Lieu, personne_id) 
 values ($inputSerie,$inputMention,$inputAnnneeBac,$inputEtablissement,$id)";
-    $sql5 = "INSERT INTO premiercycle (Annee1Intitule, Annee1AnneeObtention, Annee1Lieu, Annee1Moyenne, Annee2Intitule, 
+$sql5 = "INSERT INTO premiercycle (Annee1Intitule, Annee1AnneeObtention, Annee1Lieu, Annee1Moyenne, Annee2Intitule, 
                           Annee2AnneeObtention, Annee2Lieu, Annee2Moyenne, AutresDiplomesIntitule, 
                           AutresDiplomesAnneeObtention, AutresDiplomesLieu, AutresDiplomesMoyenne, personne_id) 
 values ($inputIntitule1,$inputAnneecursus1,$inputEtablisssemnt,$inputMoyenne1,$inputIntitule2,$inputAnneeCursus2,$inputEtablissement2,
         $inputMoyenne2,$inputIntitule3,$inputAnneeCursus3,$inputEtablissement3,$inputMoyenne3,$id)";
-    $sql6 = "INSERT INTO stagesentreprise (Stage, Theme, personne_id) 
+$sql6 = "INSERT INTO stagesentreprise (Stage, Theme, personne_id) 
 values ($inputIntituleStage,$inputNomEntreprise,$id)";
-
-
-
-
-    $conn->query($sql1);
-    $conn->query($sql2);
-    $conn->query($sql3);
-    $conn->query($sql4);
-    $conn->query($sql5);
-    $conn->query($sql6);
-}
-
-$conn->close();
 ?>
 
