@@ -260,7 +260,7 @@
                     <div class="col-md-9"></div>
                     <div class="col-md-3">
                         <div class="d-grid gap-2">
-                            <button type="button" class="btn btn-success">Confirmer</button>
+                            <button type="submit" class="btn btn-success">Confirmer</button>
                         </div>
 
                     </div>
