@@ -55,7 +55,7 @@ session_start();
                 <div class="col-md-1"></div>
                 <div class="col-md-8" id="divFormCandidat">
                     <div class="overflow-auto" style="max-height: 500px;">
-                        <form action="/candidature/formCandidat" method="post" class="row g-3">
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="row g-3">
                             <h3 id="infosPersoZone">Infos. Personelles</h3>
                             <div class="col-md-6">
                                 <label for="inputNom" class="form-label">Nom</label>
@@ -75,7 +75,6 @@ session_start();
                             </div>
                             <hr>
                             <h3 id="coordonneesZone">Coordonnées</h3>
-
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">Adresse</label>
                                 <input type="text" class="form-control" id="inputAddress" name ="inputAddress" placeholder="1234 Main St">
@@ -253,19 +252,19 @@ session_start();
                                     </label>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-9"></div>
-                                <div class="col-md-3">adresseetudiant
-                                    <div class="d-grid gap-2">
-                                        <button type="button" class="btn btn-success">Confirmer</button>
-                                    </div>
-
-                                </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success">Confirmer</button>
                             </div>
                         </form>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-9"></div>
+                    <div class="col-md-3">
 
+
+                    </div>
+                </div>
             </div>
 
 
@@ -276,14 +275,12 @@ session_start();
 </body>
 </html>
 <?php
-include ('config.php');
 global $conn;
+include ('config.php');
 if ($conn->connect_error) {
     die("La connexion à la base de données a échoué: " . $conn->connect_error);
 }
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-    session_start();
     //récupération des valeures du formulaire
     $inputNom = $_POST['inputNom'];
     $inputPreNom = $_POST['inputPrenom'];
@@ -320,38 +317,35 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $inputIntituleStage = $_POST['inputIntituleStage'];
     $inputNomEntreprise = $_POST['inputNomEntreprise'];
     $inputMissions = $_POST['inputMissions'];
-    $inputRadioStage1 = $_POST['inputRadioStage1'];
-    $inputRadioStage2= $_POST['inputRadioStage2'];
 
-// Insertion des données dans la base de données
+
+    // Insertion des données dans la base de données
     $sql1 = "INSERT INTO personne (Nom, Prenom, EtatCandidature, NomJeuneFille, DateNaissance) 
-values ($inputNom,$inputPreNom,'?',$inputNomJF,$inputDateNaissance)";
+    values ($inputNom,$inputPreNom,'?',$inputNomJF,$inputDateNaissance)";
     $id=("SELECT last_insert_id() from personne");
     $sql2 = "INSERT INTO adresseetudiant (Ville, CodePostal, Telephone, Mobile, personne_id) 
-values ($inputCity,$inputZip,$inputTelFixe,$inputTelPort, $id)";
+    values ($inputCity,$inputZip,$inputTelFixe,$inputTelPort, $id)";
     $sql3 = "INSERT INTO adresseetudiant (Ville, CodePostal, Telephone, Mobile, personne_id) 
-values ($inputCity,$inputZip,$inputTelFixe,$inputTelPort, $id)";
+    values ($inputCity,$inputZip,$inputTelFixe,$inputTelPort, $id)";
     $sql4 = "INSERT INTO baccalaureat (Serie, Mention, Annee, Lieu, personne_id) 
-values ($inputSerie,$inputMention,$inputAnnneeBac,$inputEtablissement,$id)";
+    values ($inputSerie,$inputMention,$inputAnnneeBac,$inputEtablissement,$id)";
     $sql5 = "INSERT INTO premiercycle (Annee1Intitule, Annee1AnneeObtention, Annee1Lieu, Annee1Moyenne, Annee2Intitule, 
-                          Annee2AnneeObtention, Annee2Lieu, Annee2Moyenne, AutresDiplomesIntitule, 
-                          AutresDiplomesAnneeObtention, AutresDiplomesLieu, AutresDiplomesMoyenne, personne_id) 
-values ($inputIntitule1,$inputAnneecursus1,$inputEtablisssemnt,$inputMoyenne1,$inputIntitule2,$inputAnneeCursus2,$inputEtablissement2,
-        $inputMoyenne2,$inputIntitule3,$inputAnneeCursus3,$inputEtablissement3,$inputMoyenne3,$id)";
+                              Annee2AnneeObtention, Annee2Lieu, Annee2Moyenne, AutresDiplomesIntitule, 
+                              AutresDiplomesAnneeObtention, AutresDiplomesLieu, AutresDiplomesMoyenne, personne_id) 
+    values ($inputIntitule1,$inputAnneecursus1,$inputEtablisssemnt,$inputMoyenne1,$inputIntitule2,$inputAnneeCursus2,$inputEtablissement2,
+            $inputMoyenne2,$inputIntitule3,$inputAnneeCursus3,$inputEtablissement3,$inputMoyenne3,$id)";
     $sql6 = "INSERT INTO stagesentreprise (Stage, Theme, personne_id) 
-values ($inputIntituleStage,$inputNomEntreprise,$id)";
+    values ($inputIntituleStage,$inputNomEntreprise,$id)";
 
+    if ($conn->query($sql1)===TRUE){
+        try{
+            exit();
+        }catch (Exception $e){}
+    }
 
-
-
-    $conn->query($sql1);
-    $conn->query($sql2);
-    $conn->query($sql3);
-    $conn->query($sql4);
-    $conn->query($sql5);
-    $conn->query($sql6);
+}else {
+    echo "Une erreur s'est produite lors de l'envoi du formulaire : " . $conn->error;
 }
-
 $conn->close();
 ?>
 
